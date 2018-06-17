@@ -14,6 +14,7 @@ import { app, BrowserWindow } from 'electron';
 import MenuBuilder from './menu';
 
 let mainWindow = null;
+let addWindow = null;
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -39,6 +40,7 @@ const installExtensions = async () => {
     extensions.map(name => installer.default(installer[name], forceDownload))
   ).catch(console.log);
 };
+
 
 /**
  * Add event listeners...
@@ -85,6 +87,6 @@ app.on('ready', async () => {
     mainWindow = null;
   });
 
-  const menuBuilder = new MenuBuilder(mainWindow);
+  const menuBuilder = new MenuBuilder(mainWindow, addWindow);
   menuBuilder.buildMenu();
 });

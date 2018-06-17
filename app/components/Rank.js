@@ -45,7 +45,7 @@ export default class Rank extends Component<Props> {
     return(
       <span>
         <span style={{maxWidth: 16, display: "inline-block"}}>
-          <img className="responsive-img" alt={alt} src={src} />
+          <img className="img-fluid" alt={alt} src={src} />
         </span>
         <span style={{display: "inline-block"}}>
           { this.rankString() }
@@ -57,10 +57,10 @@ export default class Rank extends Component<Props> {
   multilineRankImage(alt, src){
     return(
       <div className="row">
-        <div className="col s12" >
-          <img className="responsive-img" alt={alt} src={src} />
+        <div className="col-12" >
+          <img className="img-fluid" style={{maxHeight: 65}} alt={alt} src={src} />
         </div>
-        <div className="col s12" >
+        <div className="col-12" >
           { this.rankString() }
         </div>
       </div>

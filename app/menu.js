@@ -4,8 +4,9 @@ import { app, Menu, shell, BrowserWindow } from 'electron';
 export default class MenuBuilder {
   mainWindow: BrowserWindow;
 
-  constructor(mainWindow: BrowserWindow) {
+  constructor(mainWindow: BrowserWindow, addWindow) {
     this.mainWindow = mainWindow;
+    this.addWindow = addWindow;
   }
 
   buildMenu() {
@@ -42,6 +43,16 @@ export default class MenuBuilder {
     });
   }
 
+  createMatchEntryWindow(){
+    this.addWindow = new BrowserWindow({
+      width: 300,
+      height: 400,
+      title: "Add Competitive Result"
+    });
+
+    this.addWindow.loadURL(`file://${__dirname}/app.html`);
+  }
+
   buildDarwinTemplate() {
     const subMenuAbout = {
       label: 'Electron',
@@ -74,6 +85,9 @@ export default class MenuBuilder {
         }
       ]
     };
+
+
+
     const subMenuEdit = {
       label: 'Edit',
       submenu: [
@@ -185,9 +199,13 @@ export default class MenuBuilder {
         label: '&File',
         submenu: [
           {
-            label: '&Open',
-            accelerator: 'Ctrl+O'
-          },
+            label: '&Enter new Match',
+            accelerator: 'Ctrl+N',
+            click: () => {
+              this.createMatchEntryWindow();
+            }
+          }
+          ,
           {
             label: '&Close',
             accelerator: 'Ctrl+W',

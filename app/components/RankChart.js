@@ -9,7 +9,7 @@ import {
 } from 'recharts';
 
 type map = {name: string, shortName: string, type: string};
-type hero = {name: string, role: string};
+type hero = {name: string, type: string};
 type heroes = Array<hero>;
 type match = {srChange: number, newSr: number, map: map, heroes: heroes, playedAt: string};
 type Props = {matchHistory: Array<match>};

@@ -2,6 +2,11 @@ const staticData = {
   startSr: 1350,
   mapTypes:["Assault", "Escort", "Hybrid", "Control"],
   maps: [
+    { name: "Overall", shortName: "Overall", type: "Aggregate"},
+    { name: "Assault", shortName: "Assault", type: "Aggregate"},
+    { name: "Escort", shortName: "Escort", type: "Aggregate"},
+    { name: "Hybrid", shortName: "Hybrid", type: "Aggregate"},
+    { name: "Control", shortName: "Control", type: "Aggregate"},
     { name: "Hanamura", shortName: "Hanamura", type: "Assault"},
     { name: "Horizon Lunar Colony", shortName: "Horizon", type: "Assault"},
     { name: "Temple of Anubis", shortName: "Anubis", type: "Assault" },
@@ -22,33 +27,38 @@ const staticData = {
   ],
   heroRoles: ["Offense", "Defense", "Tank", "Support"],
   heroes: [
-    { name: "Doomfist", role: "Offense"},
-    { name: "Genji", role: "Offense"},
-    { name: "McCree", role: "Offense"},
-    { name: "Pharah", role: "Offense"},
-    { name: "Reaper", role: "Offense"},
-    { name: "Soldier: 76", role: "Offense"},
-    { name: "Sombra", role: "Offense"},
-    { name: "Tracer", role: "Offense"},
-    { name: "Bastion", role: "Defense"},
-    { name: "Hanzo", role: "Defense"},
-    { name: "Junkrat", role: "Defense"},
-    { name: "Mei", role: "Defense"},
-    { name: "Torbjörn", role: "Defense"},
-    { name: "Widowmaker", role: "Defense"},
-    { name: "D.Va", role: "Tank"},
-    { name: "Orisa", role: "Tank"},
-    { name: "Reinhardt", role: "Tank"},
-    { name: "Roadhog", role: "Tank"},
-    { name: "Winston", role: "Tank"},
-    { name: "Zarya", role: "Tank"},
-    { name: "Ana", role: "Support"},
-    { name: "Brigitte", role: "Support"},
-    { name: "Lúcio", role: "Support"},
-    { name: "Mercy", role: "Support"},
-    { name: "Moira", role: "Support"},
-    { name: "Symmetra", role: "Support"},
-    { name: "Zenyatta", role: "Support"}
+    { name: "Overall",     type: "Aggregate"},
+    { name: "Offense",     type: "Aggregate"},
+    { name: "Defense",     type: "Aggregate"},
+    { name: "Tank",        type: "Aggregate"},
+    { name: "Support",     type: "Aggregate"},
+    { name: "Doomfist",    type: "Offense"},
+    { name: "Genji",       type: "Offense"},
+    { name: "McCree",      type: "Offense"},
+    { name: "Pharah",      type: "Offense"},
+    { name: "Reaper",      type: "Offense"},
+    { name: "Soldier: 76", type: "Offense"},
+    { name: "Sombra",      type: "Offense"},
+    { name: "Tracer",      type: "Offense"},
+    { name: "Bastion",     type: "Defense"},
+    { name: "Hanzo",       type: "Defense"},
+    { name: "Junkrat",     type: "Defense"},
+    { name: "Mei",         type: "Defense"},
+    { name: "Torbjörn",    type: "Defense"},
+    { name: "Widowmaker",  type: "Defense"},
+    { name: "D.Va",        type: "Tank"},
+    { name: "Orisa",       type: "Tank"},
+    { name: "Reinhardt",   type: "Tank"},
+    { name: "Roadhog",     type: "Tank"},
+    { name: "Winston",     type: "Tank"},
+    { name: "Zarya",       type: "Tank"},
+    { name: "Ana",         type: "Support"},
+    { name: "Brigitte",    type: "Support"},
+    { name: "Lúcio",       type: "Support"},
+    { name: "Mercy",       type: "Support"},
+    { name: "Moira",       type: "Support"},
+    { name: "Symmetra",    type: "Support"},
+    { name: "Zenyatta",    type: "Support"}
 
   ]
 };
@@ -89,13 +99,13 @@ staticData.matchHistory = [{
   "newSr": 1309,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -109,7 +119,7 @@ staticData.matchHistory = [{
   "newSr": 1268,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -123,10 +133,10 @@ staticData.matchHistory = [{
   "newSr": 1268,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -140,10 +150,10 @@ staticData.matchHistory = [{
   "newSr": 1311,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -157,10 +167,10 @@ staticData.matchHistory = [{
   "newSr": 1311,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -174,10 +184,10 @@ staticData.matchHistory = [{
   "newSr": 1311,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -191,10 +201,10 @@ staticData.matchHistory = [{
   "newSr": 1311,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -208,10 +218,10 @@ staticData.matchHistory = [{
   "newSr": 1269,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -225,10 +235,10 @@ staticData.matchHistory = [{
   "newSr": 1226,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -242,10 +252,10 @@ staticData.matchHistory = [{
   "newSr": 1266,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -259,7 +269,7 @@ staticData.matchHistory = [{
   "newSr": 1306,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -273,7 +283,7 @@ staticData.matchHistory = [{
   "newSr": 1346,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -287,13 +297,13 @@ staticData.matchHistory = [{
   "newSr": 1304,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -307,7 +317,7 @@ staticData.matchHistory = [{
   "newSr": 1348,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -321,7 +331,7 @@ staticData.matchHistory = [{
   "newSr": 1307,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -335,7 +345,7 @@ staticData.matchHistory = [{
   "newSr": 1264,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -349,10 +359,10 @@ staticData.matchHistory = [{
   "newSr": 1221,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -366,10 +376,10 @@ staticData.matchHistory = [{
   "newSr": 1265,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -383,10 +393,10 @@ staticData.matchHistory = [{
   "newSr": 1222,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -400,10 +410,10 @@ staticData.matchHistory = [{
   "newSr": 1222,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -417,10 +427,10 @@ staticData.matchHistory = [{
   "newSr": 1222,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -434,10 +444,10 @@ staticData.matchHistory = [{
   "newSr": 1222,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -451,10 +461,10 @@ staticData.matchHistory = [{
   "newSr": 1265,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -468,10 +478,10 @@ staticData.matchHistory = [{
   "newSr": 1224,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -485,13 +495,13 @@ staticData.matchHistory = [{
   "newSr": 1184,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -505,10 +515,10 @@ staticData.matchHistory = [{
   "newSr": 1144,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -522,10 +532,10 @@ staticData.matchHistory = [{
   "newSr": 1144,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -539,13 +549,13 @@ staticData.matchHistory = [{
   "newSr": 1185,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -559,10 +569,10 @@ staticData.matchHistory = [{
   "newSr": 1228,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -576,7 +586,7 @@ staticData.matchHistory = [{
   "newSr": 1270,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -590,10 +600,10 @@ staticData.matchHistory = [{
   "newSr": 1310,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -607,10 +617,10 @@ staticData.matchHistory = [{
   "newSr": 1267,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -624,10 +634,10 @@ staticData.matchHistory = [{
   "newSr": 1267,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -641,10 +651,10 @@ staticData.matchHistory = [{
   "newSr": 1226,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -658,7 +668,7 @@ staticData.matchHistory = [{
   "newSr": 1183,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -672,13 +682,13 @@ staticData.matchHistory = [{
   "newSr": 1183,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -692,10 +702,10 @@ staticData.matchHistory = [{
   "newSr": 1223,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -709,7 +719,7 @@ staticData.matchHistory = [{
   "newSr": 1266,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -723,7 +733,7 @@ staticData.matchHistory = [{
   "newSr": 1308,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -737,7 +747,7 @@ staticData.matchHistory = [{
   "newSr": 1349,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -751,7 +761,7 @@ staticData.matchHistory = [{
   "newSr": 1392,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -765,10 +775,10 @@ staticData.matchHistory = [{
   "newSr": 1352,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -782,10 +792,10 @@ staticData.matchHistory = [{
   "newSr": 1309,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -799,10 +809,10 @@ staticData.matchHistory = [{
   "newSr": 1269,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -816,10 +826,10 @@ staticData.matchHistory = [{
   "newSr": 1226,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -833,7 +843,7 @@ staticData.matchHistory = [{
   "newSr": 1270,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -847,13 +857,13 @@ staticData.matchHistory = [{
   "newSr": 1310,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -867,10 +877,10 @@ staticData.matchHistory = [{
   "newSr": 1310,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -884,7 +894,7 @@ staticData.matchHistory = [{
   "newSr": 1310,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -898,7 +908,7 @@ staticData.matchHistory = [{
   "newSr": 1352,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -912,10 +922,10 @@ staticData.matchHistory = [{
   "newSr": 1394,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -929,10 +939,10 @@ staticData.matchHistory = [{
   "newSr": 1350,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -946,7 +956,7 @@ staticData.matchHistory = [{
   "newSr": 1390,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -960,13 +970,13 @@ staticData.matchHistory = [{
   "newSr": 1346,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -980,7 +990,7 @@ staticData.matchHistory = [{
   "newSr": 1303,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -994,10 +1004,10 @@ staticData.matchHistory = [{
   "newSr": 1303,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1011,7 +1021,7 @@ staticData.matchHistory = [{
   "newSr": 1345,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1025,10 +1035,10 @@ staticData.matchHistory = [{
   "newSr": 1304,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1042,13 +1052,13 @@ staticData.matchHistory = [{
   "newSr": 1344,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1062,7 +1072,7 @@ staticData.matchHistory = [{
   "newSr": 1388,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1076,7 +1086,7 @@ staticData.matchHistory = [{
   "newSr": 1388,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1090,10 +1100,10 @@ staticData.matchHistory = [{
   "newSr": 1429,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1107,10 +1117,10 @@ staticData.matchHistory = [{
   "newSr": 1469,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1124,10 +1134,10 @@ staticData.matchHistory = [{
   "newSr": 1428,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1141,10 +1151,10 @@ staticData.matchHistory = [{
   "newSr": 1386,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1158,7 +1168,7 @@ staticData.matchHistory = [{
   "newSr": 1386,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1172,10 +1182,10 @@ staticData.matchHistory = [{
   "newSr": 1386,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1189,7 +1199,7 @@ staticData.matchHistory = [{
   "newSr": 1428,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1203,10 +1213,10 @@ staticData.matchHistory = [{
   "newSr": 1386,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1220,7 +1230,7 @@ staticData.matchHistory = [{
   "newSr": 1386,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1234,7 +1244,7 @@ staticData.matchHistory = [{
   "newSr": 1428,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1248,13 +1258,13 @@ staticData.matchHistory = [{
   "newSr": 1470,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1268,10 +1278,10 @@ staticData.matchHistory = [{
   "newSr": 1470,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1285,7 +1295,7 @@ staticData.matchHistory = [{
   "newSr": 1429,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1299,10 +1309,10 @@ staticData.matchHistory = [{
   "newSr": 1470,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1316,10 +1326,10 @@ staticData.matchHistory = [{
   "newSr": 1428,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1333,7 +1343,7 @@ staticData.matchHistory = [{
   "newSr": 1428,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1347,7 +1357,7 @@ staticData.matchHistory = [{
   "newSr": 1472,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1361,10 +1371,10 @@ staticData.matchHistory = [{
   "newSr": 1472,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1378,10 +1388,10 @@ staticData.matchHistory = [{
   "newSr": 1429,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1395,10 +1405,10 @@ staticData.matchHistory = [{
   "newSr": 1429,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1412,10 +1422,10 @@ staticData.matchHistory = [{
   "newSr": 1429,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1429,10 +1439,10 @@ staticData.matchHistory = [{
   "newSr": 1473,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1446,13 +1456,13 @@ staticData.matchHistory = [{
   "newSr": 1473,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1466,7 +1476,7 @@ staticData.matchHistory = [{
   "newSr": 1431,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1480,10 +1490,10 @@ staticData.matchHistory = [{
   "newSr": 1431,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1497,13 +1507,13 @@ staticData.matchHistory = [{
   "newSr": 1391,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1517,7 +1527,7 @@ staticData.matchHistory = [{
   "newSr": 1434,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1531,10 +1541,10 @@ staticData.matchHistory = [{
   "newSr": 1474,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1548,10 +1558,10 @@ staticData.matchHistory = [{
   "newSr": 1514,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1565,13 +1575,13 @@ staticData.matchHistory = [{
   "newSr": 1473,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1585,10 +1595,10 @@ staticData.matchHistory = [{
   "newSr": 1429,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1602,13 +1612,13 @@ staticData.matchHistory = [{
   "newSr": 1388,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1622,7 +1632,7 @@ staticData.matchHistory = [{
   "newSr": 1428,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1636,7 +1646,7 @@ staticData.matchHistory = [{
   "newSr": 1428,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1650,13 +1660,13 @@ staticData.matchHistory = [{
   "newSr": 1471,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1670,10 +1680,10 @@ staticData.matchHistory = [{
   "newSr": 1514,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1687,7 +1697,7 @@ staticData.matchHistory = [{
   "newSr": 1514,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1701,10 +1711,10 @@ staticData.matchHistory = [{
   "newSr": 1474,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1718,10 +1728,10 @@ staticData.matchHistory = [{
   "newSr": 1430,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1735,7 +1745,7 @@ staticData.matchHistory = [{
   "newSr": 1472,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1749,10 +1759,10 @@ staticData.matchHistory = [{
   "newSr": 1512,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1766,10 +1776,10 @@ staticData.matchHistory = [{
   "newSr": 1471,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1783,10 +1793,10 @@ staticData.matchHistory = [{
   "newSr": 1427,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1800,10 +1810,10 @@ staticData.matchHistory = [{
   "newSr": 1384,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1817,7 +1827,7 @@ staticData.matchHistory = [{
   "newSr": 1384,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1831,10 +1841,10 @@ staticData.matchHistory = [{
   "newSr": 1424,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1848,10 +1858,10 @@ staticData.matchHistory = [{
   "newSr": 1424,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1865,10 +1875,10 @@ staticData.matchHistory = [{
   "newSr": 1383,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1882,7 +1892,7 @@ staticData.matchHistory = [{
   "newSr": 1339,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1896,13 +1906,13 @@ staticData.matchHistory = [{
   "newSr": 1298,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1916,13 +1926,13 @@ staticData.matchHistory = [{
   "newSr": 1342,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1936,7 +1946,7 @@ staticData.matchHistory = [{
   "newSr": 1302,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1950,7 +1960,7 @@ staticData.matchHistory = [{
   "newSr": 1344,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -1964,7 +1974,7 @@ staticData.matchHistory = [{
   "newSr": 1387,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -1978,7 +1988,7 @@ staticData.matchHistory = [{
   "newSr": 1428,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -1992,10 +2002,10 @@ staticData.matchHistory = [{
   "newSr": 1472,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2009,10 +2019,10 @@ staticData.matchHistory = [{
   "newSr": 1431,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2026,10 +2036,10 @@ staticData.matchHistory = [{
   "newSr": 1474,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2043,10 +2053,10 @@ staticData.matchHistory = [{
   "newSr": 1518,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2060,10 +2070,10 @@ staticData.matchHistory = [{
   "newSr": 1475,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2077,10 +2087,10 @@ staticData.matchHistory = [{
   "newSr": 1475,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2094,10 +2104,10 @@ staticData.matchHistory = [{
   "newSr": 1475,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2111,7 +2121,7 @@ staticData.matchHistory = [{
   "newSr": 1475,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2125,13 +2135,13 @@ staticData.matchHistory = [{
   "newSr": 1517,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2145,7 +2155,7 @@ staticData.matchHistory = [{
   "newSr": 1473,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2159,10 +2169,10 @@ staticData.matchHistory = [{
   "newSr": 1514,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2176,10 +2186,10 @@ staticData.matchHistory = [{
   "newSr": 1556,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2193,10 +2203,10 @@ staticData.matchHistory = [{
   "newSr": 1514,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2210,10 +2220,10 @@ staticData.matchHistory = [{
   "newSr": 1470,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2227,10 +2237,10 @@ staticData.matchHistory = [{
   "newSr": 1470,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2244,10 +2254,10 @@ staticData.matchHistory = [{
   "newSr": 1512,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2261,10 +2271,10 @@ staticData.matchHistory = [{
   "newSr": 1472,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2278,10 +2288,10 @@ staticData.matchHistory = [{
   "newSr": 1472,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2295,7 +2305,7 @@ staticData.matchHistory = [{
   "newSr": 1431,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2309,10 +2319,10 @@ staticData.matchHistory = [{
   "newSr": 1472,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2326,7 +2336,7 @@ staticData.matchHistory = [{
   "newSr": 1514,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2340,7 +2350,7 @@ staticData.matchHistory = [{
   "newSr": 1556,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2354,13 +2364,13 @@ staticData.matchHistory = [{
   "newSr": 1513,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2374,10 +2384,10 @@ staticData.matchHistory = [{
   "newSr": 1470,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2391,13 +2401,13 @@ staticData.matchHistory = [{
   "newSr": 1430,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2411,10 +2421,10 @@ staticData.matchHistory = [{
   "newSr": 1430,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2428,7 +2438,7 @@ staticData.matchHistory = [{
   "newSr": 1386,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2442,7 +2452,7 @@ staticData.matchHistory = [{
   "newSr": 1386,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2456,7 +2466,7 @@ staticData.matchHistory = [{
   "newSr": 1346,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2470,10 +2480,10 @@ staticData.matchHistory = [{
   "newSr": 1346,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2487,10 +2497,10 @@ staticData.matchHistory = [{
   "newSr": 1346,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2504,7 +2514,7 @@ staticData.matchHistory = [{
   "newSr": 1304,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2518,10 +2528,10 @@ staticData.matchHistory = [{
   "newSr": 1304,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2535,13 +2545,13 @@ staticData.matchHistory = [{
   "newSr": 1304,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2555,10 +2565,10 @@ staticData.matchHistory = [{
   "newSr": 1345,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2572,10 +2582,10 @@ staticData.matchHistory = [{
   "newSr": 1386,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2589,13 +2599,13 @@ staticData.matchHistory = [{
   "newSr": 1344,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2609,10 +2619,10 @@ staticData.matchHistory = [{
   "newSr": 1385,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2626,10 +2636,10 @@ staticData.matchHistory = [{
   "newSr": 1345,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2643,10 +2653,10 @@ staticData.matchHistory = [{
   "newSr": 1305,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2660,10 +2670,10 @@ staticData.matchHistory = [{
   "newSr": 1305,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2677,10 +2687,10 @@ staticData.matchHistory = [{
   "newSr": 1264,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2694,10 +2704,10 @@ staticData.matchHistory = [{
   "newSr": 1264,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2711,10 +2721,10 @@ staticData.matchHistory = [{
   "newSr": 1223,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2728,7 +2738,7 @@ staticData.matchHistory = [{
   "newSr": 1223,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2742,7 +2752,7 @@ staticData.matchHistory = [{
   "newSr": 1179,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2756,10 +2766,10 @@ staticData.matchHistory = [{
   "newSr": 1222,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2773,7 +2783,7 @@ staticData.matchHistory = [{
   "newSr": 1263,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2787,7 +2797,7 @@ staticData.matchHistory = [{
   "newSr": 1221,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2801,10 +2811,10 @@ staticData.matchHistory = [{
   "newSr": 1265,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2818,7 +2828,7 @@ staticData.matchHistory = [{
   "newSr": 1305,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2832,7 +2842,7 @@ staticData.matchHistory = [{
   "newSr": 1261,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2846,7 +2856,7 @@ staticData.matchHistory = [{
   "newSr": 1305,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2860,10 +2870,10 @@ staticData.matchHistory = [{
   "newSr": 1348,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2877,7 +2887,7 @@ staticData.matchHistory = [{
   "newSr": 1348,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2891,13 +2901,13 @@ staticData.matchHistory = [{
   "newSr": 1392,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2911,7 +2921,7 @@ staticData.matchHistory = [{
   "newSr": 1434,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2925,7 +2935,7 @@ staticData.matchHistory = [{
   "newSr": 1434,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -2939,13 +2949,13 @@ staticData.matchHistory = [{
   "newSr": 1478,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2959,10 +2969,10 @@ staticData.matchHistory = [{
   "newSr": 1478,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -2976,10 +2986,10 @@ staticData.matchHistory = [{
   "newSr": 1519,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -2993,7 +3003,7 @@ staticData.matchHistory = [{
   "newSr": 1563,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3007,10 +3017,10 @@ staticData.matchHistory = [{
   "newSr": 1522,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3024,7 +3034,7 @@ staticData.matchHistory = [{
   "newSr": 1562,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3038,10 +3048,10 @@ staticData.matchHistory = [{
   "newSr": 1562,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3055,7 +3065,7 @@ staticData.matchHistory = [{
   "newSr": 1521,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3069,10 +3079,10 @@ staticData.matchHistory = [{
   "newSr": 1564,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3086,7 +3096,7 @@ staticData.matchHistory = [{
   "newSr": 1521,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3100,7 +3110,7 @@ staticData.matchHistory = [{
   "newSr": 1480,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3114,10 +3124,10 @@ staticData.matchHistory = [{
   "newSr": 1436,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3131,7 +3141,7 @@ staticData.matchHistory = [{
   "newSr": 1479,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3145,10 +3155,10 @@ staticData.matchHistory = [{
   "newSr": 1521,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3162,10 +3172,10 @@ staticData.matchHistory = [{
   "newSr": 1564,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3179,7 +3189,7 @@ staticData.matchHistory = [{
   "newSr": 1604,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -3193,13 +3203,13 @@ staticData.matchHistory = [{
   "newSr": 1563,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3213,10 +3223,10 @@ staticData.matchHistory = [{
   "newSr": 1563,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -3230,10 +3240,10 @@ staticData.matchHistory = [{
   "newSr": 1603,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3247,7 +3257,7 @@ staticData.matchHistory = [{
   "newSr": 1645,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3261,7 +3271,7 @@ staticData.matchHistory = [{
   "newSr": 1688,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3275,13 +3285,13 @@ staticData.matchHistory = [{
   "newSr": 1644,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3295,7 +3305,7 @@ staticData.matchHistory = [{
   "newSr": 1684,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3309,10 +3319,10 @@ staticData.matchHistory = [{
   "newSr": 1684,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3326,7 +3336,7 @@ staticData.matchHistory = [{
   "newSr": 1727,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -3340,10 +3350,10 @@ staticData.matchHistory = [{
   "newSr": 1771,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3357,7 +3367,7 @@ staticData.matchHistory = [{
   "newSr": 1815,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3371,10 +3381,10 @@ staticData.matchHistory = [{
   "newSr": 1772,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -3388,10 +3398,10 @@ staticData.matchHistory = [{
   "newSr": 1732,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3405,10 +3415,10 @@ staticData.matchHistory = [{
   "newSr": 1732,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -3422,10 +3432,10 @@ staticData.matchHistory = [{
   "newSr": 1772,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3439,13 +3449,13 @@ staticData.matchHistory = [{
   "newSr": 1728,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3459,7 +3469,7 @@ staticData.matchHistory = [{
   "newSr": 1771,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3473,7 +3483,7 @@ staticData.matchHistory = [{
   "newSr": 1771,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -3487,10 +3497,10 @@ staticData.matchHistory = [{
   "newSr": 1815,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3504,10 +3514,10 @@ staticData.matchHistory = [{
   "newSr": 1774,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3521,10 +3531,10 @@ staticData.matchHistory = [{
   "newSr": 1814,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -3538,7 +3548,7 @@ staticData.matchHistory = [{
   "newSr": 1814,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3552,10 +3562,10 @@ staticData.matchHistory = [{
   "newSr": 1856,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3569,10 +3579,10 @@ staticData.matchHistory = [{
   "newSr": 1856,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -3586,10 +3596,10 @@ staticData.matchHistory = [{
   "newSr": 1856,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3603,10 +3613,10 @@ staticData.matchHistory = [{
   "newSr": 1856,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3620,10 +3630,10 @@ staticData.matchHistory = [{
   "newSr": 1899,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3637,7 +3647,7 @@ staticData.matchHistory = [{
   "newSr": 1941,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -3651,7 +3661,7 @@ staticData.matchHistory = [{
   "newSr": 1984,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3665,7 +3675,7 @@ staticData.matchHistory = [{
   "newSr": 1984,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3679,10 +3689,10 @@ staticData.matchHistory = [{
   "newSr": 2025,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3696,10 +3706,10 @@ staticData.matchHistory = [{
   "newSr": 2069,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3713,10 +3723,10 @@ staticData.matchHistory = [{
   "newSr": 2025,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3730,10 +3740,10 @@ staticData.matchHistory = [{
   "newSr": 1982,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3747,7 +3757,7 @@ staticData.matchHistory = [{
   "newSr": 1942,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3761,7 +3771,7 @@ staticData.matchHistory = [{
   "newSr": 1986,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3775,7 +3785,7 @@ staticData.matchHistory = [{
   "newSr": 2030,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3789,7 +3799,7 @@ staticData.matchHistory = [{
   "newSr": 2030,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3803,7 +3813,7 @@ staticData.matchHistory = [{
   "newSr": 1989,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3817,10 +3827,10 @@ staticData.matchHistory = [{
   "newSr": 1989,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3834,10 +3844,10 @@ staticData.matchHistory = [{
   "newSr": 2033,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3851,7 +3861,7 @@ staticData.matchHistory = [{
   "newSr": 2075,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3865,10 +3875,10 @@ staticData.matchHistory = [{
   "newSr": 2116,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3882,7 +3892,7 @@ staticData.matchHistory = [{
   "newSr": 2156,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -3896,10 +3906,10 @@ staticData.matchHistory = [{
   "newSr": 2156,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3913,13 +3923,13 @@ staticData.matchHistory = [{
   "newSr": 2199,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3933,7 +3943,7 @@ staticData.matchHistory = [{
   "newSr": 2199,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3947,10 +3957,10 @@ staticData.matchHistory = [{
   "newSr": 2199,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3964,10 +3974,10 @@ staticData.matchHistory = [{
   "newSr": 2240,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -3981,7 +3991,7 @@ staticData.matchHistory = [{
   "newSr": 2240,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -3995,10 +4005,10 @@ staticData.matchHistory = [{
   "newSr": 2197,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4012,13 +4022,13 @@ staticData.matchHistory = [{
   "newSr": 2239,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4032,10 +4042,10 @@ staticData.matchHistory = [{
   "newSr": 2283,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4049,10 +4059,10 @@ staticData.matchHistory = [{
   "newSr": 2241,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4066,10 +4076,10 @@ staticData.matchHistory = [{
   "newSr": 2241,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4083,10 +4093,10 @@ staticData.matchHistory = [{
   "newSr": 2241,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4100,7 +4110,7 @@ staticData.matchHistory = [{
   "newSr": 2199,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4114,7 +4124,7 @@ staticData.matchHistory = [{
   "newSr": 2159,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4128,10 +4138,10 @@ staticData.matchHistory = [{
   "newSr": 2159,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4145,10 +4155,10 @@ staticData.matchHistory = [{
   "newSr": 2203,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4162,10 +4172,10 @@ staticData.matchHistory = [{
   "newSr": 2243,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4179,7 +4189,7 @@ staticData.matchHistory = [{
   "newSr": 2199,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4193,10 +4203,10 @@ staticData.matchHistory = [{
   "newSr": 2241,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4210,10 +4220,10 @@ staticData.matchHistory = [{
   "newSr": 2197,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4227,10 +4237,10 @@ staticData.matchHistory = [{
   "newSr": 2237,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4244,10 +4254,10 @@ staticData.matchHistory = [{
   "newSr": 2197,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4261,10 +4271,10 @@ staticData.matchHistory = [{
   "newSr": 2241,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4278,10 +4288,10 @@ staticData.matchHistory = [{
   "newSr": 2241,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4295,10 +4305,10 @@ staticData.matchHistory = [{
   "newSr": 2241,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4312,7 +4322,7 @@ staticData.matchHistory = [{
   "newSr": 2241,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4326,10 +4336,10 @@ staticData.matchHistory = [{
   "newSr": 2241,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4343,10 +4353,10 @@ staticData.matchHistory = [{
   "newSr": 2241,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4360,7 +4370,7 @@ staticData.matchHistory = [{
   "newSr": 2283,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4374,7 +4384,7 @@ staticData.matchHistory = [{
   "newSr": 2241,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4388,7 +4398,7 @@ staticData.matchHistory = [{
   "newSr": 2281,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4402,10 +4412,10 @@ staticData.matchHistory = [{
   "newSr": 2323,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4419,7 +4429,7 @@ staticData.matchHistory = [{
   "newSr": 2363,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4433,13 +4443,13 @@ staticData.matchHistory = [{
   "newSr": 2407,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4453,10 +4463,10 @@ staticData.matchHistory = [{
   "newSr": 2367,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4470,10 +4480,10 @@ staticData.matchHistory = [{
   "newSr": 2367,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4487,7 +4497,7 @@ staticData.matchHistory = [{
   "newSr": 2367,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4501,7 +4511,7 @@ staticData.matchHistory = [{
   "newSr": 2411,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4515,10 +4525,10 @@ staticData.matchHistory = [{
   "newSr": 2452,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4532,7 +4542,7 @@ staticData.matchHistory = [{
   "newSr": 2452,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4546,7 +4556,7 @@ staticData.matchHistory = [{
   "newSr": 2496,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4560,10 +4570,10 @@ staticData.matchHistory = [{
   "newSr": 2538,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4577,7 +4587,7 @@ staticData.matchHistory = [{
   "newSr": 2497,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4591,7 +4601,7 @@ staticData.matchHistory = [{
   "newSr": 2538,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4605,13 +4615,13 @@ staticData.matchHistory = [{
   "newSr": 2580,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4625,7 +4635,7 @@ staticData.matchHistory = [{
   "newSr": 2624,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4639,10 +4649,10 @@ staticData.matchHistory = [{
   "newSr": 2667,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4656,10 +4666,10 @@ staticData.matchHistory = [{
   "newSr": 2710,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4673,10 +4683,10 @@ staticData.matchHistory = [{
   "newSr": 2670,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4690,7 +4700,7 @@ staticData.matchHistory = [{
   "newSr": 2714,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4704,10 +4714,10 @@ staticData.matchHistory = [{
   "newSr": 2758,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4721,7 +4731,7 @@ staticData.matchHistory = [{
   "newSr": 2799,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4735,13 +4745,13 @@ staticData.matchHistory = [{
   "newSr": 2758,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4755,10 +4765,10 @@ staticData.matchHistory = [{
   "newSr": 2758,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4772,7 +4782,7 @@ staticData.matchHistory = [{
   "newSr": 2758,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4786,7 +4796,7 @@ staticData.matchHistory = [{
   "newSr": 2799,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4800,7 +4810,7 @@ staticData.matchHistory = [{
   "newSr": 2839,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4814,10 +4824,10 @@ staticData.matchHistory = [{
   "newSr": 2799,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4831,10 +4841,10 @@ staticData.matchHistory = [{
   "newSr": 2756,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4848,10 +4858,10 @@ staticData.matchHistory = [{
   "newSr": 2798,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4865,7 +4875,7 @@ staticData.matchHistory = [{
   "newSr": 2798,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4879,7 +4889,7 @@ staticData.matchHistory = [{
   "newSr": 2798,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4893,10 +4903,10 @@ staticData.matchHistory = [{
   "newSr": 2839,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4910,10 +4920,10 @@ staticData.matchHistory = [{
   "newSr": 2799,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -4927,10 +4937,10 @@ staticData.matchHistory = [{
   "newSr": 2799,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4944,7 +4954,7 @@ staticData.matchHistory = [{
   "newSr": 2842,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4958,7 +4968,7 @@ staticData.matchHistory = [{
   "newSr": 2882,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -4972,10 +4982,10 @@ staticData.matchHistory = [{
   "newSr": 2923,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -4989,7 +4999,7 @@ staticData.matchHistory = [{
   "newSr": 2881,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5003,10 +5013,10 @@ staticData.matchHistory = [{
   "newSr": 2881,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5020,10 +5030,10 @@ staticData.matchHistory = [{
   "newSr": 2925,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5037,7 +5047,7 @@ staticData.matchHistory = [{
   "newSr": 2882,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5051,7 +5061,7 @@ staticData.matchHistory = [{
   "newSr": 2924,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5065,10 +5075,10 @@ staticData.matchHistory = [{
   "newSr": 2968,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5082,10 +5092,10 @@ staticData.matchHistory = [{
   "newSr": 2924,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5099,10 +5109,10 @@ staticData.matchHistory = [{
   "newSr": 2924,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5116,10 +5126,10 @@ staticData.matchHistory = [{
   "newSr": 2924,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5133,13 +5143,13 @@ staticData.matchHistory = [{
   "newSr": 2924,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5153,10 +5163,10 @@ staticData.matchHistory = [{
   "newSr": 2924,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5170,7 +5180,7 @@ staticData.matchHistory = [{
   "newSr": 2967,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5184,10 +5194,10 @@ staticData.matchHistory = [{
   "newSr": 2925,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5201,13 +5211,13 @@ staticData.matchHistory = [{
   "newSr": 2966,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5221,10 +5231,10 @@ staticData.matchHistory = [{
   "newSr": 2923,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5238,13 +5248,13 @@ staticData.matchHistory = [{
   "newSr": 2880,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5258,7 +5268,7 @@ staticData.matchHistory = [{
   "newSr": 2880,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5272,10 +5282,10 @@ staticData.matchHistory = [{
   "newSr": 2880,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5289,7 +5299,7 @@ staticData.matchHistory = [{
   "newSr": 2840,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5303,10 +5313,10 @@ staticData.matchHistory = [{
   "newSr": 2840,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5320,7 +5330,7 @@ staticData.matchHistory = [{
   "newSr": 2884,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5334,7 +5344,7 @@ staticData.matchHistory = [{
   "newSr": 2884,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5348,7 +5358,7 @@ staticData.matchHistory = [{
   "newSr": 2925,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5362,10 +5372,10 @@ staticData.matchHistory = [{
   "newSr": 2965,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5379,10 +5389,10 @@ staticData.matchHistory = [{
   "newSr": 2925,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5396,10 +5406,10 @@ staticData.matchHistory = [{
   "newSr": 2925,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5413,10 +5423,10 @@ staticData.matchHistory = [{
   "newSr": 2966,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5430,10 +5440,10 @@ staticData.matchHistory = [{
   "newSr": 2922,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5447,7 +5457,7 @@ staticData.matchHistory = [{
   "newSr": 2881,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5461,7 +5471,7 @@ staticData.matchHistory = [{
   "newSr": 2922,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5475,7 +5485,7 @@ staticData.matchHistory = [{
   "newSr": 2879,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5489,7 +5499,7 @@ staticData.matchHistory = [{
   "newSr": 2839,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5503,13 +5513,13 @@ staticData.matchHistory = [{
   "newSr": 2839,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5523,10 +5533,10 @@ staticData.matchHistory = [{
   "newSr": 2879,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5540,7 +5550,7 @@ staticData.matchHistory = [{
   "newSr": 2836,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5554,13 +5564,13 @@ staticData.matchHistory = [{
   "newSr": 2836,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5574,10 +5584,10 @@ staticData.matchHistory = [{
   "newSr": 2793,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5591,10 +5601,10 @@ staticData.matchHistory = [{
   "newSr": 2834,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5608,10 +5618,10 @@ staticData.matchHistory = [{
   "newSr": 2878,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5625,10 +5635,10 @@ staticData.matchHistory = [{
   "newSr": 2878,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5642,10 +5652,10 @@ staticData.matchHistory = [{
   "newSr": 2878,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5659,10 +5669,10 @@ staticData.matchHistory = [{
   "newSr": 2920,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5676,7 +5686,7 @@ staticData.matchHistory = [{
   "newSr": 2963,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5690,10 +5700,10 @@ staticData.matchHistory = [{
   "newSr": 3007,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5707,10 +5717,10 @@ staticData.matchHistory = [{
   "newSr": 3050,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5724,10 +5734,10 @@ staticData.matchHistory = [{
   "newSr": 3007,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5741,10 +5751,10 @@ staticData.matchHistory = [{
   "newSr": 2964,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5758,7 +5768,7 @@ staticData.matchHistory = [{
   "newSr": 2923,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5772,7 +5782,7 @@ staticData.matchHistory = [{
   "newSr": 2964,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5786,10 +5796,10 @@ staticData.matchHistory = [{
   "newSr": 2964,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5803,10 +5813,10 @@ staticData.matchHistory = [{
   "newSr": 2921,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5820,10 +5830,10 @@ staticData.matchHistory = [{
   "newSr": 2921,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5837,13 +5847,13 @@ staticData.matchHistory = [{
   "newSr": 2879,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5857,7 +5867,7 @@ staticData.matchHistory = [{
   "newSr": 2839,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -5871,13 +5881,13 @@ staticData.matchHistory = [{
   "newSr": 2839,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5891,13 +5901,13 @@ staticData.matchHistory = [{
   "newSr": 2881,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5911,10 +5921,10 @@ staticData.matchHistory = [{
   "newSr": 2922,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5928,10 +5938,10 @@ staticData.matchHistory = [{
   "newSr": 2922,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5945,7 +5955,7 @@ staticData.matchHistory = [{
   "newSr": 2882,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5959,10 +5969,10 @@ staticData.matchHistory = [{
   "newSr": 2842,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -5976,13 +5986,13 @@ staticData.matchHistory = [{
   "newSr": 2885,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -5996,7 +6006,7 @@ staticData.matchHistory = [{
   "newSr": 2925,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6010,10 +6020,10 @@ staticData.matchHistory = [{
   "newSr": 2925,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6027,7 +6037,7 @@ staticData.matchHistory = [{
   "newSr": 2967,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6041,10 +6051,10 @@ staticData.matchHistory = [{
   "newSr": 3010,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6058,13 +6068,13 @@ staticData.matchHistory = [{
   "newSr": 3053,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6078,10 +6088,10 @@ staticData.matchHistory = [{
   "newSr": 3094,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6095,10 +6105,10 @@ staticData.matchHistory = [{
   "newSr": 3135,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6112,13 +6122,13 @@ staticData.matchHistory = [{
   "newSr": 3135,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6132,10 +6142,10 @@ staticData.matchHistory = [{
   "newSr": 3177,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6149,7 +6159,7 @@ staticData.matchHistory = [{
   "newSr": 3220,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6163,7 +6173,7 @@ staticData.matchHistory = [{
   "newSr": 3176,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6177,10 +6187,10 @@ staticData.matchHistory = [{
   "newSr": 3133,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6194,10 +6204,10 @@ staticData.matchHistory = [{
   "newSr": 3173,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6211,7 +6221,7 @@ staticData.matchHistory = [{
   "newSr": 3173,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6225,7 +6235,7 @@ staticData.matchHistory = [{
   "newSr": 3173,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6239,13 +6249,13 @@ staticData.matchHistory = [{
   "newSr": 3215,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6259,10 +6269,10 @@ staticData.matchHistory = [{
   "newSr": 3174,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6276,7 +6286,7 @@ staticData.matchHistory = [{
   "newSr": 3215,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6290,10 +6300,10 @@ staticData.matchHistory = [{
   "newSr": 3215,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6307,10 +6317,10 @@ staticData.matchHistory = [{
   "newSr": 3259,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6324,10 +6334,10 @@ staticData.matchHistory = [{
   "newSr": 3217,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6341,10 +6351,10 @@ staticData.matchHistory = [{
   "newSr": 3261,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6358,7 +6368,7 @@ staticData.matchHistory = [{
   "newSr": 3302,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6372,10 +6382,10 @@ staticData.matchHistory = [{
   "newSr": 3258,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6389,10 +6399,10 @@ staticData.matchHistory = [{
   "newSr": 3298,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6406,7 +6416,7 @@ staticData.matchHistory = [{
   "newSr": 3342,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6420,7 +6430,7 @@ staticData.matchHistory = [{
   "newSr": 3384,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6434,7 +6444,7 @@ staticData.matchHistory = [{
   "newSr": 3425,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6448,10 +6458,10 @@ staticData.matchHistory = [{
   "newSr": 3469,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6465,10 +6475,10 @@ staticData.matchHistory = [{
   "newSr": 3512,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6482,10 +6492,10 @@ staticData.matchHistory = [{
   "newSr": 3552,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6499,10 +6509,10 @@ staticData.matchHistory = [{
   "newSr": 3596,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6516,7 +6526,7 @@ staticData.matchHistory = [{
   "newSr": 3596,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6530,10 +6540,10 @@ staticData.matchHistory = [{
   "newSr": 3596,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6547,10 +6557,10 @@ staticData.matchHistory = [{
   "newSr": 3636,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6564,7 +6574,7 @@ staticData.matchHistory = [{
   "newSr": 3594,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6578,7 +6588,7 @@ staticData.matchHistory = [{
   "newSr": 3594,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6592,10 +6602,10 @@ staticData.matchHistory = [{
   "newSr": 3550,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6609,10 +6619,10 @@ staticData.matchHistory = [{
   "newSr": 3591,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6626,7 +6636,7 @@ staticData.matchHistory = [{
   "newSr": 3591,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6640,7 +6650,7 @@ staticData.matchHistory = [{
   "newSr": 3591,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6654,10 +6664,10 @@ staticData.matchHistory = [{
   "newSr": 3547,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6671,7 +6681,7 @@ staticData.matchHistory = [{
   "newSr": 3547,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6685,10 +6695,10 @@ staticData.matchHistory = [{
   "newSr": 3504,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6702,7 +6712,7 @@ staticData.matchHistory = [{
   "newSr": 3544,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6716,10 +6726,10 @@ staticData.matchHistory = [{
   "newSr": 3544,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6733,13 +6743,13 @@ staticData.matchHistory = [{
   "newSr": 3502,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6753,7 +6763,7 @@ staticData.matchHistory = [{
   "newSr": 3462,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6767,7 +6777,7 @@ staticData.matchHistory = [{
   "newSr": 3418,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6781,7 +6791,7 @@ staticData.matchHistory = [{
   "newSr": 3461,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6795,10 +6805,10 @@ staticData.matchHistory = [{
   "newSr": 3419,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6812,10 +6822,10 @@ staticData.matchHistory = [{
   "newSr": 3419,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6829,10 +6839,10 @@ staticData.matchHistory = [{
   "newSr": 3419,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6846,10 +6856,10 @@ staticData.matchHistory = [{
   "newSr": 3419,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6863,10 +6873,10 @@ staticData.matchHistory = [{
   "newSr": 3419,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6880,10 +6890,10 @@ staticData.matchHistory = [{
   "newSr": 3459,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6897,10 +6907,10 @@ staticData.matchHistory = [{
   "newSr": 3499,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6914,10 +6924,10 @@ staticData.matchHistory = [{
   "newSr": 3540,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6931,10 +6941,10 @@ staticData.matchHistory = [{
   "newSr": 3498,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6948,7 +6958,7 @@ staticData.matchHistory = [{
   "newSr": 3456,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -6962,10 +6972,10 @@ staticData.matchHistory = [{
   "newSr": 3500,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -6979,7 +6989,7 @@ staticData.matchHistory = [{
   "newSr": 3459,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -6993,10 +7003,10 @@ staticData.matchHistory = [{
   "newSr": 3500,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -7010,13 +7020,13 @@ staticData.matchHistory = [{
   "newSr": 3457,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7030,10 +7040,10 @@ staticData.matchHistory = [{
   "newSr": 3499,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7047,10 +7057,10 @@ staticData.matchHistory = [{
   "newSr": 3542,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7064,10 +7074,10 @@ staticData.matchHistory = [{
   "newSr": 3586,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -7081,7 +7091,7 @@ staticData.matchHistory = [{
   "newSr": 3544,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -7095,13 +7105,13 @@ staticData.matchHistory = [{
   "newSr": 3586,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7115,10 +7125,10 @@ staticData.matchHistory = [{
   "newSr": 3628,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -7132,13 +7142,13 @@ staticData.matchHistory = [{
   "newSr": 3586,
   "heroes": [{
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7152,10 +7162,10 @@ staticData.matchHistory = [{
   "newSr": 3626,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7169,10 +7179,10 @@ staticData.matchHistory = [{
   "newSr": 3582,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7186,13 +7196,13 @@ staticData.matchHistory = [{
   "newSr": 3582,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7206,13 +7216,13 @@ staticData.matchHistory = [{
   "newSr": 3582,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -7226,13 +7236,13 @@ staticData.matchHistory = [{
   "newSr": 3626,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -7246,10 +7256,10 @@ staticData.matchHistory = [{
   "newSr": 3668,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7263,10 +7273,10 @@ staticData.matchHistory = [{
   "newSr": 3710,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -7280,10 +7290,10 @@ staticData.matchHistory = [{
   "newSr": 3752,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -7297,7 +7307,7 @@ staticData.matchHistory = [{
   "newSr": 3752,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -7311,13 +7321,13 @@ staticData.matchHistory = [{
   "newSr": 3792,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -7331,7 +7341,7 @@ staticData.matchHistory = [{
   "newSr": 3834,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7345,13 +7355,13 @@ staticData.matchHistory = [{
   "newSr": 3834,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -7365,7 +7375,7 @@ staticData.matchHistory = [{
   "newSr": 3791,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -7379,10 +7389,10 @@ staticData.matchHistory = [{
   "newSr": 3791,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7396,7 +7406,7 @@ staticData.matchHistory = [{
   "newSr": 3791,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7410,10 +7420,10 @@ staticData.matchHistory = [{
   "newSr": 3834,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7427,10 +7437,10 @@ staticData.matchHistory = [{
   "newSr": 3878,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -7444,7 +7454,7 @@ staticData.matchHistory = [{
   "newSr": 3835,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7458,10 +7468,10 @@ staticData.matchHistory = [{
   "newSr": 3877,
   "heroes": [{
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7475,10 +7485,10 @@ staticData.matchHistory = [{
   "newSr": 3877,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -7492,10 +7502,10 @@ staticData.matchHistory = [{
   "newSr": 3919,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Torbjörn",
-    "role": "Defense"
+    "type": "Defense"
   }
   ],
   "map": {
@@ -7509,10 +7519,10 @@ staticData.matchHistory = [{
   "newSr": 3963,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "Orisa",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -7526,7 +7536,7 @@ staticData.matchHistory = [{
   "newSr": 3963,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -7540,10 +7550,10 @@ staticData.matchHistory = [{
   "newSr": 4004,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }, {
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7557,10 +7567,10 @@ staticData.matchHistory = [{
   "newSr": 4047,
   "heroes": [{
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }, {
     "name": "D.Va",
-    "role": "Tank"
+    "type": "Tank"
   }
   ],
   "map": {
@@ -7574,7 +7584,7 @@ staticData.matchHistory = [{
   "newSr": 4087,
   "heroes": [{
     "name": "Sombra",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
@@ -7588,7 +7598,7 @@ staticData.matchHistory = [{
   "newSr": 4129,
   "heroes": [{
     "name": "Pharah",
-    "role": "Offense"
+    "type": "Offense"
   }
   ],
   "map": {
