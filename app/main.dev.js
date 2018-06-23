@@ -10,7 +10,10 @@
  *
  * @flow
  */
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
+import fs from 'fs';
+import path from 'path';
+
 import MenuBuilder from './menu';
 
 let mainWindow = null;
@@ -26,7 +29,6 @@ if (
   process.env.DEBUG_PROD === 'true'
 ) {
   require('electron-debug')();
-  const path = require('path');
   const p = path.join(__dirname, '..', 'app', 'node_modules');
   require('module').globalPaths.push(p);
 }
@@ -41,6 +43,16 @@ const installExtensions = async () => {
   ).catch(console.log);
 };
 
+/**
+ *  Window Communication
+ */
+
+ipcMain.on("submitMatch", (event, newMatch) => {
+  mainWindow.webContents.send('addNewMatch', newMatch);
+});
+ipcMain.on("saveMatchHistory", (event, matchHistory) => {
+  fs.writeFile(path.join(__dirname, '..', 'app', 'store', 'matchHistory.json'), JSON.stringify(matchHistory));
+});
 
 /**
  * Add event listeners...
@@ -68,13 +80,26 @@ app.on('ready', async () => {
     height: 728
   });
 
+  addWindow = new BrowserWindow({
+    show: false,
+    width: 500,
+    height: 400,
+    title: "Add Competitive Result",
+    frame: false
+  });
+  addWindow.on('close', (event) => {
+    addWindow.hide();
+    event.preventDefault();
+  });
+
+
   mainWindow.setMinimumSize(1200, 728);
 
 
-  mainWindow.loadURL(`file://${__dirname}/app.html`);
+  mainWindow.loadURL(`file://${__dirname}/app.html#/counter`);
 
   // @TODO: Use 'ready-to-show' event
-  //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
+  // https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
   mainWindow.webContents.on('did-finish-load', () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');

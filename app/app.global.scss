@@ -6,6 +6,11 @@ $table-cell-padding-sm:       0.1rem;
 
 @import "~font-awesome/css/font-awesome.css";
 @import "~bootstrap/scss/bootstrap";
+@import '~react-widgets/dist/css/react-widgets.css';
+
+.is-invalid {
+  border-color: #dc3545;
+}
 
 ::-webkit-scrollbar {
   width: 8px; /* 1px wider than Lion. */

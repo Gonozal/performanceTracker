@@ -4,7 +4,7 @@ import { app, Menu, shell, BrowserWindow } from 'electron';
 export default class MenuBuilder {
   mainWindow: BrowserWindow;
 
-  constructor(mainWindow: BrowserWindow, addWindow) {
+  constructor(mainWindow: BrowserWindow, addWindow: BrowserWindow) {
     this.mainWindow = mainWindow;
     this.addWindow = addWindow;
   }
@@ -44,13 +44,10 @@ export default class MenuBuilder {
   }
 
   createMatchEntryWindow(){
-    this.addWindow = new BrowserWindow({
-      width: 300,
-      height: 400,
-      title: "Add Competitive Result"
-    });
-
-    this.addWindow.loadURL(`file://${__dirname}/app.html`);
+    this.addWindow.loadURL(`file://${__dirname}/app.html#/matchEntry`);
+    this.addWindow.webContents.on('did-finish-load', () => {
+      this.addWindow.show();
+    })
   }
 
   buildDarwinTemplate() {
@@ -126,6 +123,7 @@ export default class MenuBuilder {
           accelerator: 'Alt+Command+I',
           click: () => {
             this.mainWindow.toggleDevTools();
+            this.addWindow.toggleDevTools();
           }
         }
       ]
@@ -241,6 +239,7 @@ export default class MenuBuilder {
                   accelerator: 'Alt+Ctrl+I',
                   click: () => {
                     this.mainWindow.toggleDevTools();
+                    this.addWindow.toggleDevTools();
                   }
                 }
               ]

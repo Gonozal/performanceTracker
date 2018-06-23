@@ -15,6 +15,7 @@
   "rules": {
     "arrow-parens": ["off"],
     "arrow-body-style": "off",
+    "label-has-for": "off",
     "compat/compat": "error",
     "consistent-return": "off",
     "comma-dangle": "off",
