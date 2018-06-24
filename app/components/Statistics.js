@@ -39,11 +39,16 @@ export default class Statistics extends Component<Props> {
   componentDidMount() {
     ipcRenderer.removeAllListeners("addNewMatch");
     ipcRenderer.removeAllListeners("startSrChanged");
+    ipcRenderer.removeAllListeners("matchHistoryReset");
     ipcRenderer.on('addNewMatch', (event, newMatch) => {
       this.addMatch(newMatch);
     });
     ipcRenderer.on('startSrChanged', () => {
       this.setState({startSr: store.get('startSr', 1), currentSr: store.get('currentSr', 1)});
+    });
+    ipcRenderer.on('erasedMatchHistory', () => {
+      console.log("updating for erased match history");
+      this.setState({matchHistory: []});
     });
   }
 

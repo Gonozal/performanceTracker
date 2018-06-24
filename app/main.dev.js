@@ -62,6 +62,11 @@ ipcMain.on("startSrChanged", (event, startSr: number) => {
   if((matchHistory || []).length === 0) { store.set('currentSr', startSr) }
   mainWindow.webContents.send('startSrChanged');
 });
+ipcMain.on("eraseMatchHistory", () => {
+  console.log("erasing match history");
+  store.set('matchHistory', []);
+  mainWindow.webContents.send('erasedMatchHistory');
+});
 
 /**
  * Add event listeners...
@@ -92,7 +97,7 @@ app.on('ready', async () => {
   inputWindow = new BrowserWindow({
     show: false,
     width: 500,
-    height: 400,
+    height: 450,
     title: "Add Competitive Result",
     frame: false
   });
@@ -119,6 +124,10 @@ app.on('ready', async () => {
 
   mainWindow.on('closed', () => {
     mainWindow = null;
+  });
+
+  inputWindow.on('hide', () => {
+    mainWindow.focus()
   });
 
   const menuBuilder = new MenuBuilder(mainWindow, inputWindow);
