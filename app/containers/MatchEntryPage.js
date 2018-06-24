@@ -6,9 +6,7 @@ import * as MatchEntryActions from '../actions/matchEntry';
 
 
 function mapStateToProps(state) {
-  return {
-    counter: state.counter
-  };
+  return {state};
 }
 
 function mapDispatchToProps(dispatch) {

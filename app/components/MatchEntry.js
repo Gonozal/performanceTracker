@@ -1,6 +1,8 @@
 // @flow
 import React, { Component } from 'react';
 import { remote, ipcRenderer } from 'electron';
+import Store from 'electron-store';
+import NumberFormat from 'react-number-format';
 
 import Combobox from 'react-widgets/lib/Combobox';
 import Multiselect from 'react-widgets/lib/Multiselect';
@@ -8,21 +10,32 @@ import Moment from 'moment';
 import momentLocalizer from 'react-widgets-moment';
 
 import Rank from './Rank';
-import { maps, heroes } from '../store/mockData';
+import { maps, heroes } from '../store/staticData';
 
-import matchHistory from '../store/matchHistory.json';
 
+const store = new Store();
 
 Moment.locale('en');
 momentLocalizer();
 
-type Props = {};
+type Props = {
+};
+
+type State = {
+  newSr: number,
+  currentSr: number,
+  map: {},
+  heroes: [],
+  errors: {},
+  comment: string
+};
 
 const emptyMap =  { name: "", shortName: "", type: "" , valid: false};
 
 
 export default class MatchEntry extends Component<Props> {
   props: Props;
+  state: State;
 
   static abort(){
     remote.getCurrentWindow().hide();
@@ -31,10 +44,12 @@ export default class MatchEntry extends Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
-      newSr: matchHistory[matchHistory.length - 1].newSr,
+      newSr: store.get('currentSr'),
+      currentSr: store.get('currentSr'),
       map: emptyMap,
-      heroes: [],
-      errors: {}
+      heroes: store.get('favouriteHeroes', []),
+      errors: {},
+      comment: ""
     };
   }
 
@@ -57,6 +72,7 @@ export default class MatchEntry extends Component<Props> {
     this.setState({errors});
     if(Object.keys(errors).length === 0){
       ipcRenderer.send("submitMatch", {
+        comment: this.state.comment,
         newSr: this.state.newSr,
         map: this.state.map,
         heroes: this.state.heroes,
@@ -73,6 +89,23 @@ export default class MatchEntry extends Component<Props> {
     return null
   }
 
+  won(){
+    return this.state.newSr > this.state.currentSr
+  }
+
+  lost(){
+    return this.state.newSr < this.state.currentSr
+  }
+
+  srChangeClassName(){
+    if(this.won()){
+      return "text-success"
+    } if(this.lost()){
+      return "text-danger"
+    }
+    return "text.muted"
+  }
+
   render() {
     const ingameHeroes = heroes.filter(e => e.type !== "Aggregate");
     const ingameMaps   = maps.filter(e =>   e.type !== "Aggregate");
@@ -81,22 +114,34 @@ export default class MatchEntry extends Component<Props> {
         <form onSubmit={(e) => this.submit(e)}>
           <h4 style={{marginBottom: 20}}>Enter your Competetive Match Results</h4>
           <div className="form-group row">
-            <label className="col-4">New SR</label>
+            <span className="col-4">New SR</span>
             <div className="input-group col-8">
               <div className="input-group-prepend">
                 <div className="input-group-text" style={{maxWidth: 45}} ><Rank rank={this.state.newSr} hideText /></div>
               </div>
-              <input
-                type="number"
+              <NumberFormat
+                autoFocus
                 className={`form-control ${this.state.errors.newSr ? "is-invalid" : ""}`}
                 value={this.state.newSr}
-                onChange={(event) => this.setState({newSr: parseInt(event.target.value, 10)|| 0})}
+                onValueChange={values => {
+                  this.setState({newSr: parseInt(values.value, 10)|| 0})
+                }}
+                isNumericString
+                suffix=" SR"
+                isAllowed={values => values.value <= 5000 && values.value > 0}
               />
+              <div className="input-group-append">
+                <span className={`input-group-text ${this.srChangeClassName()}`}>
+                  ({
+                    (this.lost() ? "" : "+") + (this.state.newSr - this.state.currentSr)
+                  })
+                </span>
+              </div>
               {this.invalidFieldMessage("newSr")}
             </div>
           </div>
           <div className="form-group row">
-            <label className="col-4">Map</label>
+            <span className="col-4">Map</span>
             <div className="col-8">
               <Combobox
                 containerClassName={this.state.errors.heroes ? "is-invalid" : ""}
@@ -125,6 +170,18 @@ export default class MatchEntry extends Component<Props> {
                 filter='startsWith'
               />
               {this.invalidFieldMessage("heroes")}
+            </div>
+          </div>
+          <div className="form-group row">
+            <label className="col-4">Comment</label>
+            <div className="input-group col-8">
+              <textarea
+                className="form-control"
+                rows="3"
+                value={this.state.comment}
+                onChange={(event) => this.setState({comment: event.target.value})}
+
+              />
             </div>
           </div>
           <div className="row text-center">

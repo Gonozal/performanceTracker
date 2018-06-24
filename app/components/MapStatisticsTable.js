@@ -29,9 +29,9 @@ export default class MapStatisticsTable extends Component<Props> {
 
   static renderMapRow(statistic: Statistic, playedOverall: number, highlight: boolean = false){
     return(
-      <tr className={highlight? "bg-light border-bottom border-dark" : ""}>
+      <tr key={statistic.name} className={highlight? "bg-light border-bottom border-dark" : ""}>
         <td>{statistic.name}</td>
-        <td>{`${Math.round(statistic.played  / playedOverall * 1000) / 10}%`}</td>
+        <td>{`${Math.round(statistic.played  / (playedOverall || 1) * 1000) / 10}%`}</td>
         <td className="text-secondary">{statistic.played}</td>
         <td className="text-secondary">{statistic.wins}</td>
         <td className="text-secondary">{statistic.losses}</td>
@@ -98,9 +98,15 @@ export default class MapStatisticsTable extends Component<Props> {
     const statistics = this.generateMapStatistics();
     return(
       <table className="table table-sm table-borderless">
+        <colgroup>
+          <col style={{width: "28%"}} />
+          {
+            [...Array(5).keys()].map(e => <col key={e} style={{width: "9%"}} />)
+          }
+        </colgroup>
         <thead>
           <tr>
-            <th className="text-capitalize" scope="col ">{statisticFor.replace("es", "")}</th>
+            <th className="text-capitalize" scope="col">{statisticFor.replace("es", "")}</th>
             <th scope="col">Played %</th>
             <th scope="col">Played</th>
             <th scope="col">Won</th>

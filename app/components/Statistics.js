@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { ipcRenderer } from 'electron';
+import Store from 'electron-store';
 
 import Rank from './Rank';
 import RankChart from './RankChart';
@@ -9,14 +10,15 @@ import {
   maps,
   heroRoles,
   heroes
-} from '../store/mockData';
+} from '../store/staticData';
 
-import matchHistory from '../store/matchHistory.json';
 
 import MatchHistory from './MatchHistory';
 import MapStatisticsTable from './MapStatisticsTable';
 
 type Props = {};
+
+const store = new Store();
 
 export default class Statistics extends Component<Props> {
   props: Props;
@@ -24,7 +26,9 @@ export default class Statistics extends Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
-      matchHistory,
+      matchHistory: store.get('matchHistory', []),
+      startSr: store.get('startSr', 1),
+      currentSr: store.get('currentSr', 1),
       mapTypes,
       maps,
       heroRoles,
@@ -34,19 +38,25 @@ export default class Statistics extends Component<Props> {
 
   componentDidMount() {
     ipcRenderer.removeAllListeners("addNewMatch");
+    ipcRenderer.removeAllListeners("startSrChanged");
     ipcRenderer.on('addNewMatch', (event, newMatch) => {
       this.addMatch(newMatch);
+    });
+    ipcRenderer.on('startSrChanged', () => {
+      this.setState({startSr: store.get('startSr', 1), currentSr: store.get('currentSr', 1)});
     });
   }
 
   addMatch(newMatch){
+    const history = this.state.matchHistory;
+    const oldSr = history.length === 0 ? this.state.startSr : history[history.length - 1].newSr;
     const newMatchHistory = [
       ...this.state.matchHistory,
       Object.assign(newMatch, {
-        srChange: newMatch.newSr - this.state.matchHistory[this.state.matchHistory.length-1].newSr
+        srChange: newMatch.newSr - oldSr
       })
     ];
-    this.setState({ matchHistory: newMatchHistory });
+    this.setState({ matchHistory: newMatchHistory, currentSr: newMatch.newSr });
     ipcRenderer.send("saveMatchHistory", newMatchHistory);
   }
 
@@ -77,7 +87,7 @@ export default class Statistics extends Component<Props> {
             <div className="card" style={{maxHeight: 130, height: 130}}>
               <div className="card-body row">
                 <div className="col-1 align-middle text-center">
-                  <Rank rank={this.matches()[this.matches().length - 1].newSr} />
+                  <Rank rank={this.state.currentSr} />
                 </div>
                 <div className="col-2">
                   <RankChart matchHistory={this.matches()} />

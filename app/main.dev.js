@@ -11,13 +11,15 @@
  * @flow
  */
 import { app, BrowserWindow, ipcMain } from 'electron';
-import fs from 'fs';
+import Store  from 'electron-store';
 import path from 'path';
 
 import MenuBuilder from './menu';
 
+const store = new Store();
+
 let mainWindow = null;
-let addWindow = null;
+let inputWindow = null;
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -51,7 +53,14 @@ ipcMain.on("submitMatch", (event, newMatch) => {
   mainWindow.webContents.send('addNewMatch', newMatch);
 });
 ipcMain.on("saveMatchHistory", (event, matchHistory) => {
-  fs.writeFile(path.join(__dirname, '..', 'app', 'store', 'matchHistory.json'), JSON.stringify(matchHistory));
+  if(matchHistory.length === 0){ return }
+  store.set('matchHistory', matchHistory);
+  store.set('currentSr', matchHistory[matchHistory.length - 1].newSr);
+});
+ipcMain.on("startSrChanged", (event, startSr: number) => {
+  const matchHistory = store.get('matchHistory');
+  if((matchHistory || []).length === 0) { store.set('currentSr', startSr) }
+  mainWindow.webContents.send('startSrChanged');
 });
 
 /**
@@ -80,15 +89,15 @@ app.on('ready', async () => {
     height: 728
   });
 
-  addWindow = new BrowserWindow({
+  inputWindow = new BrowserWindow({
     show: false,
     width: 500,
     height: 400,
     title: "Add Competitive Result",
     frame: false
   });
-  addWindow.on('close', (event) => {
-    addWindow.hide();
+  inputWindow.on('close', (event) => {
+    inputWindow.hide();
     event.preventDefault();
   });
 
@@ -96,7 +105,7 @@ app.on('ready', async () => {
   mainWindow.setMinimumSize(1200, 728);
 
 
-  mainWindow.loadURL(`file://${__dirname}/app.html#/counter`);
+  mainWindow.loadURL(`file://${__dirname}/app.html`);
 
   // @TODO: Use 'ready-to-show' event
   // https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
@@ -112,6 +121,6 @@ app.on('ready', async () => {
     mainWindow = null;
   });
 
-  const menuBuilder = new MenuBuilder(mainWindow, addWindow);
+  const menuBuilder = new MenuBuilder(mainWindow, inputWindow);
   menuBuilder.buildMenu();
 });
